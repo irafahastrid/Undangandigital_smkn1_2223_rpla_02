@@ -341,7 +341,7 @@
           <div class="col-md-8 col-10 text-center">
             <span>ungkapan tanda kasih</span>
             <h2>Kirim Hadiah</h2>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis, iure placeat! Quas incidunt magnam aut?</p>
+            <p>Silahkan yang ingin mentransfer lewat no rekening dibawah ini :</p>
           </div>
         </div>
 
@@ -435,14 +435,13 @@
       const song = document.querySelector('#song');
       let isPlaying = false;
 
-      function disableScoll() {
+      function disableScroll() {
         scrollTop = Window.pageYOffset || document.documentElement.scrollTop;
         scrollLeft = Window.pageXOffset || document.documentElement.scrollLeft;
 
         window.onscroll = function () {
           window.scrollTo(scrollTop, scrollLeft);
         }
-
 
         rootElement.style.scrollBehavior = 'auto';
       }
@@ -453,6 +452,11 @@
         //localStorage.setItem('opened', 'true');
         playAudio();
       }
+
+      //if (!localStorage.getItem('opened')) {
+      //   disableScroll();
+      //}
+      disableScroll();
 
       function playAudio() {
         audioIconWrapper.style.display = 'flex';
@@ -473,11 +477,6 @@
 
         isPlaying = !isPlaying;
         }
-      
-      //if(!localStorage.getItem('opened')) {
-      //  disableScroll();
-      //
-      disableScroll();
     </script>
 
     <script>
