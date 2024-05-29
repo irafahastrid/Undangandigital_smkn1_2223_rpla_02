@@ -273,7 +273,7 @@
         </div>
 
         <form class="row row-cols-md-auto g-3 align-items-center justify-content-center" method="POST" 
-        action="https://script.google.com/macros/s/AKfycbyddFbEJRqwEeA6OmZAuNf0jw_B30ZUOS5qSDwlAKV_nurcW7H6osJx2ZWnIeTmPm_35g/exec"
+        action="https://script.google.com/macros/s/AKfycby1rZpyi98C2DVNVFW213oMnwMaRYvtNFuCy7wV12rG1MGjJb_R9v3FH4MNqzCZn43n/exec"
         id="my-form">
           <div class="col-12">
             <div class="mb-3">
@@ -404,8 +404,8 @@
       let isPlaying = false;
 
       function disableScroll() {
-        scrollTop = Window.pageYOffset || document.documentElement.scrollTop;
-        scrollLeft = Window.pageXOffset || document.documentElement.scrollLeft;
+        scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+        scrollLeft = window.pageXOffset || document.documentElement.scrollLeft;
 
         window.onscroll = function () {
           window.scrollTo(scrollTop, scrollLeft);
@@ -417,14 +417,14 @@
       function enableScroll() {
         window.onscroll = function () { }
         rootElement.style.scrollBehavior = 'smooth';
-        //localStorage.setItem('opened', 'true');
+        localStorage.setItem('opened', 'true');
         playAudio();
       }
 
-      //if (!localStorage.getItem('opened')) {
-      //   disableScroll();
-      //}
-      disableScroll();
+      if (!localStorage.getItem('opened')) {
+         disableScroll();
+      }
+     
 
       function playAudio() {
         audioIconWrapper.style.display = 'flex';
